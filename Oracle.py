@@ -1,12 +1,15 @@
 import random
-print("Welcome to my parlor, come tell me your name... \n")
-player = input("Enter a name: ")
-print("\nTake a seat " + player + " have a seat and ask your question. ")
-print("\nBut be mindful, you can ask only one...\n")
-def Oracle():
-    question = input("Ask me a question: ")
-    answers = ["Yes", "No", "Maybe", "Doesn't seem likely", "Seems very likely", "Ask again later"]
-    future_told = random.choice(answers)
-    print("\n" + future_told)
-    input("\nPress enter to exit ")
-Oracle()
+print("Welcome stranger tell me your name.\n")
+name = input("Enter your name ")
+print("Well then " + name +" what question can I answer for you?\n")
+def oracle():
+    while True:
+        question = input("Ask me your question. (Enter 'q' to quit) ")
+        if question.lower() == "q":
+            print("\nGoodbye for now " + name + "...")
+            break
+        else:
+            answers = ["Yes", "No", "Chances are good", "Doesn't seem likely", "Maybe", "I am tired now, ask again later"]
+            response = random.choice(answers)
+            print("\n"+ response)
+oracle()
